@@ -1,0 +1,8 @@
+[Unit]
+Description=Set the light or dark theme for the time of day
+Documentation=https://github.com/andrebbruno/omarchy-light-switch
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/omarchy-light-switch apply --quiet

@@ -1,0 +1,15 @@
+[Unit]
+Description=Check every so often whether the theme should change
+Documentation=https://github.com/andrebbruno/omarchy-light-switch
+
+[Timer]
+# A quarter of an hour is close enough for a change of theme, and cheap: when the
+# theme is already right, apply does nothing at all.
+OnCalendar=*:0/15
+# The laptop that was asleep at sunset should be right again when it wakes up.
+OnUnitActiveSec=15min
+Persistent=true
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target
